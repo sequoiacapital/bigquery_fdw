@@ -15,7 +15,7 @@ class BqClient:
     # Set vars
     client = None
     queryJob = None
-    location = None  # Override dataset location
+    location = "asia-east1"  # Override dataset location
 
     def setClient(self, jsonKeyPath):
         """
@@ -47,9 +47,10 @@ class BqClient:
                 job_config.query_parameters = parameters
 
                 self.queryJob = self.client.query(
-                    query, job_config=job_config, location=None)
+                    # todo: location remove hardcode.
+                    query, job_config=job_config, location="asia-east1")
             else:  # Non parameterized query
-                self.queryJob = self.client.query(query, location=None)
+                self.queryJob = self.client.query(query, location="asia-east1")
 
             # Set SQL dialect
             self.queryJob.UseLegacySQL = False

@@ -32,7 +32,7 @@ class Test(unittest.TestCase):
 
     def test_run_query(self):
         bq = bqclient_test.set_bq_instance()
-        bq.location = 'US'
+        bq.location = 'asia-east1'
         bqclient_test.set_client(bq, self.key)
         self.assertIsNone(bqclient_test.run_query(bq, self.query))
 
@@ -41,7 +41,7 @@ class Test(unittest.TestCase):
 
     def test_get_query_job(self):
         bq = bqclient_test.set_bq_instance()
-        bq.location = 'US'
+        bq.location = 'asia-east1'
         bqclient_test.set_client(bq, self.key)
         bqclient_test.run_query(bq, self.query)
         self.assertIsInstance(

@@ -21,7 +21,7 @@ class Test(unittest.TestCase):
         self.bc = BqClient()
 
         # Override location (need for public datasets used for unit tests)
-        self.bc.location = 'US'
+        self.bc.location = 'asia-east1'
 
     def test_setClient(self):
         self.bc.setClient(self.key)
